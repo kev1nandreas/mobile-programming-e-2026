@@ -1,31 +1,30 @@
+import 'package:flutter_application_1/models/note_database.dart';
+import 'package:flutter_application_1/pages/notes_page.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(
-  MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('my first app'),
-        centerTitle: true,
-        backgroundColor: Colors.red[600],
-      ),
-      body: Center(
-        child: Text(
-          'hello, ninjas!',
-          style: GoogleFonts.lato(
-            textStyle: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600],
-            ),
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        backgroundColor: Colors.red[600],
-        child: Text('click'),
-      ),
-    ),
-  ),
-);
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NoteDatabase.initialize();
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => NoteDatabase(),
+      child: const MyApp(),
+    )
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: NotesPage()
+    );
+  }
+}
