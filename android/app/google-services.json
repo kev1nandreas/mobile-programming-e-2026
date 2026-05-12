@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "181182078554",
+    "project_id": "titipin-70aae",
+    "storage_bucket": "titipin-70aae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181182078554:android:5a2d303cb3fc7389b44263",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf2ZDVy1FpweuIkbC8zbopt35FKAHs7Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181182078554:android:472b3e4e76dd796db44263",
+        "android_client_info": {
+          "package_name": "com.titipin.kevin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf2ZDVy1FpweuIkbC8zbopt35FKAHs7Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

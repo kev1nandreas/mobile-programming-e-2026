@@ -1,31 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() => runApp(
-  MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('my first app'),
-        centerTitle: true,
-        backgroundColor: Colors.red[600],
-      ),
-      body: Center(
-        child: Text(
-          'hello, ninjas!',
-          style: GoogleFonts.lato(
-            textStyle: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600],
-            ),
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        backgroundColor: Colors.red[600],
-        child: Text('click'),
-      ),
-    ),
-  ),
-);
+import 'app.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await initializeDateFormatting('id_ID', null);
+  runApp(const JastipApp());
+}
